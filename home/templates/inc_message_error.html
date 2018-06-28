@@ -1,0 +1,14 @@
+<!-- MAIL SENDING UNSUCCESSFULL -->
+{% csrf_token %}
+<h6 class="error">
+  <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>There was a problem validating the form please check!
+</h6>
+{% for field in form %}
+<div class="form-field-wrapper{% if field.errors %} error{% endif %}">
+  {% if field.errors %}
+      <h6 class="error">check this field</h6>
+  {% endif %}
+    {{field}}
+</div>
+{% endfor %}
+<input class="btn btn-md btn-black-line form-full" type="submit" value="Send">

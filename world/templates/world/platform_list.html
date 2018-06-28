@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags thumbnail %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+
+<!-- Intro Section
+<section class="inner-intro bg-image overlay-light parallax parallax-background1" data-background-img="img/full/26.jpg">
+    <div class="container">
+        <div class="row title">
+            <div class="page-breadcrumb">
+                <a>Home</a>/<span>{% page_attribute "page_title" %}</span>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- End Intro Section -->
+
+<section class="ptb ptb-sm-80 text-center">
+    <div class="container">
+        <h3 class="ptb-60 ptb-sm-30">{% page_attribute "page_title" %}</h3>
+
+        <div class="row container-grid nf-col-2">
+            {% for pl in object_list %}
+            {% thumbnail pl.top_image '550x220' crop subject_location=pl.top_image.subject_location as thumb %}
+            <div class="nf-item">
+                <div class="item-box">
+                    {% if pl.name == 'zzz' %}
+                        <img class="item-container" src="{% static 'img/locker.jpg' %}"/>
+                        <div class="item-mask">
+                            <div class="item-caption">
+                                <h5 class="">Coming soon...</h5>
+                            </div>
+                        </div>
+                    {% else %}
+                    <a href="{{ pl.absolute_url }}">
+                        <img class="item-container" src="{{ thumb.url }}"/>
+                        <div class="item-mask">
+                            <div class="item-caption">
+                                <h5 class="">{{ pl.name }}</h5>
+                                <button class="btn btn-xs btn-black-line" href="{{ pl.absolute_url }}">More</button>
+                            </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- End Blog Post Section -->
+
+{% endblock content %}
+
+

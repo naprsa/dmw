@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+
+<!-- Intro Section -->
+<!--<section class="inner-intro bg-image overlay-light parallax parallax-background1" data-background-img="img/full/02.jpg">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">About Us</h2>
+            <div class="page-breadcrumb">
+                <a>Home</a>/<span>About</span>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- End Intro Section -->
+
+
+<!-- About Section -->
+<section class="pt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h3>Our Mission</h3>
+                <div class="spacer-30"></div>
+                {% static_placeholder "Text About Mission" %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="ptb-80 ptb-sm-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h3>Our Vision</h3>
+                <div class="spacer-30"></div>
+                {% static_placeholder "Text About Vision" %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% load menu_tags %}
+
+
+
+{% for child in children %}
+{% if child.get_menu_title != 'zzz' %}
+<li class="">
+    <a class="{% if child.selected %}{% endif %}
+    {% if child.ancestor %} ancestor{% endif %}
+    {% if child.descendant %} descendant{% endif %}
+    {% if child.children and child.selected %} {% endif %}
+    {% if child.children %} menu-has-sub {% endif %}"
+    href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+    {{ child.get_menu_title }}{% if child.children %} <i class="fa fa-angle-down"></i>{% endif %}
+</a>
+{% if child.children %}
+<ul class="sub-dropdown {% if child.level < 1 %}dropdown{% endif %}
+                        {% if child.get_menu_title == 'Destinations' %} dest-class {% endif %}">
+    {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+</ul>
+{% endif %}
+</li>
+{% endif %}
+{% endfor %}
+
+
+
+
+
+
+

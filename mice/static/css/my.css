@@ -1,0 +1,182 @@
+@font-face{
+    font-family: 'Sosa';
+    src: url('../fonts/sosa/sosa-regular-webfont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.company-info h4 span.sosa {
+    font-family: Sosa;
+    font-size: 30px;
+}
+
+.company-info h4 span {
+    margin-right: 10px;
+}
+
+.centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.owl-buttons div i {
+    margin-top: 12px;
+}
+
+.brand-heading {
+    font-family: Florentia;
+    font-size: 40px;
+    letter-spacing: 0px;
+    margin: 0 0 5px;
+    text-transform: normal;
+    line-height: 1.5;
+}
+
+.second-brand-heading {
+    font-family: Riverside;
+    vertical-align: text-top;
+    text-transform: normal;
+    font-weight: 200;
+
+}
+
+.item-caption button {
+    margin: 0;
+    background-color: white;
+    border-width: 1px;
+    border-color: gray;
+}
+
+/*.post-entry p {
+    text-align: center;
+}*/
+
+a.scroll-top i {
+    padding-top: 8px;
+}
+
+a.item-prev i, a.item-next i{
+    padding-top: 12px;
+}
+
+a.item-all-view {
+    padding-top: 12px;
+}
+
+a#contact {
+    position:absolute;
+    bottom: 700px;
+}
+
+.company-info i {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 30px;
+    margin-right:10px;
+}
+.company-info h4 {
+    color: rgba(189, 189, 189, 1.00);
+}
+
+#contact form button.btn-black-line {
+    border-width: 1px;
+}
+
+/*hr.hotels {
+    position:relative;
+    left: 32%;
+}*/
+
+.full-cap-wraper-myvers {
+    /*display: table;*/
+    display: block;
+    position: absolute;
+    /*top: 0;*/
+    top: 200px;
+    /* height: 100%; */
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+}
+
+.full-cap-wraper-myvers h1 {
+    font-family: Florentia;
+    font-size: 80px;
+    line-height: 80px;
+}
+
+@media (min-width: 1025px) {
+    ul.sub-dropdown.dropdown.dest-class {
+        list-style-position: inside;
+        column-count: 2;
+        max-height: 500px;
+        width: auto;
+        }
+
+    ul.sub-dropdown.dropdown.dest-class li {
+        width: 150px;
+    }
+    #aboutusdteam .owl-wrapper {
+        display: flex !important;
+        width: auto !important;
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 833px) {
+    .item-mask .item-caption {
+        bottom: -40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .item-mask .item-caption {
+        bottom: -60px;
+    }
+}
+
+@media (max-width: 414px) {
+    .item-mask .item-caption {
+        bottom: -50px;
+    }
+}
+
+@media (max-width: 375px) {
+    .item-mask .item-caption {
+        bottom: -30px;
+    }
+
+    .item-mask h5 {
+        font-size: 20px;
+    }
+
+    .full-cap-wraper-myvers h1 {
+    font-family: Florentia;
+    font-size: 40px;
+    line-height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 span.brand-heading {
+        font-size: 30px;
+    }
+
+    .full-cap-wraper-myvers h1 {
+    font-family: Florentia;
+    font-size: 40px;
+    line-height: 40px;
+    }
+
+    .item-mask .item-caption {
+        bottom: -20px;
+    }
+
+    .item-mask h5 {
+        font-size: 15px;
+    }
+}
+

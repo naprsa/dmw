@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+
+<!-- Intro Section -->
+<!--<section class="inner-intro bg-image overlay-light parallax parallax-background1" data-background-img="img/full/26.jpg">
+    <div class="container">
+        <div class="row title">
+            <div class="page-breadcrumb">
+                <a>Home</a>/<span>{% page_attribute "page_title" %}</span>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- End Intro Section -->
+
+<section class="ptb ptb-sm-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h3 class="ptb-60 ptb-sm-30">{% page_attribute "page_title" %}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% for hotel in object_list %}
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-15">
+                <h5 class="text-left"><a href={{ hotel.absolute_url}}>{{ hotel.name }}</a></h5>
+            </div>
+        </div>
+        <hr class="offset-md-4">
+       {% endfor %}
+
+    </div>
+</section>
+<!-- End Blog Post Section -->
+
+{% endblock content %}

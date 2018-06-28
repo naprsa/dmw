@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags thumbnail %}
+{% block title %}{% page_attribute "page_title" %} {% endblock title %}
+
+{% block content %}
+
+<!-- Intro Section
+<section class="inner-intro dark-bg bg-image overlay-dark parallax parallax-background1" data-background-img="img/full/25.jpg">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Destinations</h2>
+        </div>
+    </div>
+</section> -->
+<!-- End Intro Section -->
+
+<!-- Work Detail Section -->
+<section class="pt ptb-sm-40 text-center">
+    <div class="container">
+        <h3 class="ptb-60 ptb-sm-30">Our Destinations</h3>
+
+
+        <div class="row container-grid nf-col-2">
+            {% for dest in object_list %}
+            {% thumbnail dest.top_image '550x220' crop subject_location=dest.top_image.subject_location as thumb %}
+            <div class="nf-item">
+                <div class="item-box">
+                    {% if dest.name == 'zzz' %}
+                        <img class="item-container" src="{% static 'img/locker.jpg' %}"/>
+                        <div class="item-mask">
+                            <div class="item-caption">
+                                <h5 class="">Coming soon...</h5>
+                            </div>
+                        </div>
+                    {% else %}
+                    <a href="{{ dest.absolute_url }}">
+                        <img class="item-container" src="{{ thumb.url }}"/>
+                        <div class="item-mask">
+                            <div class="item-caption">
+                                <h5 class="">{{ dest.name }}</h5>
+                                <button class="btn btn-xs btn-black-line" href="{{ dest.absolute_url }}">More</button>
+                            </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    <div class="spacer-75"></div>
+    <hr>
+    </div>
+</section>
+<!-- End Work Detail Section -->
+
+
+{% endblock content %}

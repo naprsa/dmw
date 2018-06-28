@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags thumbnail %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+
+<section id="intro">
+    <!-- Content -->
+    <div class="full-cap-wraper-myvers light-color">
+        <div class="content-caption light-color">
+            <div class="container">
+                <h1 class="text-center">{{ platform.name }}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+    <div class="owl-carousel fullwidth-slider white o-flow-hidden">
+        {% for image in images %}
+        <!--Slide-->
+        <div class="item bg-img slide-bg-image" data-background-img={{image.get_image}}>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- End Intro Section -->
+<!-- Blog Post Section -->
+<section class="mt-60 mt-sm-30">
+  <div class="container">
+      <div class="centered">
+          <!-- Post Bar -->
+          <div class="col-lg-9 col-md-9">
+              <div class="blog-post mb-0">
+
+                  <!--<div class="post-header">
+                      <h2>{{ platform.name }}</h2>
+                  </div>-->
+
+                  <div class="post-entry">
+                      <p>{{ platform.description}}</p>
+                  </div>
+
+              </div>
+              <hr class="mtb-60 mtb-sm-30">
+          </div>
+          <!-- End Post Bar -->
+      </div>
+  </div>
+</section>
+<!-- End Blog Post Section -->
+
+<!-- Post Next Prev Bar -->
+<section class="mb-60 mb-sm-30">
+  <div class="container">
+      <div class="item-nav">
+          {% if platform.get_prev %}
+          <a href={{ platform.get_prev }} class="item-prev">
+              <div class="prev-btn"><i class="fa fa-angle-left"></i></div>
+              <div class="item-prev-text xs-hidden">
+                  <h6>Prev MICE World</h6>
+              </div>
+          </a>
+          {% endif %}
+
+          <a href={% url "world:platforms" %} class="item-all-view">
+              <h6>MICE Worlds</h6>
+          </a>
+
+          {% if platform.get_next %}
+          <a href={{ platform.get_next }} class="item-next">
+              <div class="next-btn"><i class="fa fa-angle-right"></i></div>
+              <div class="item-next-text xs-hidden">
+                  <h6>Next MICE World</h6>
+              </div>
+          </a>
+          {% endif %}
+      </div>
+  </div>
+</section>
+<!-- End Post Next Prev Bar -->
+{% endblock content %}

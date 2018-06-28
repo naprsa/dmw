@@ -1,0 +1,13 @@
+
+*.sublime-*
+*.db
+**/__pycache__
+/media
+*/migrations
+.env
+sftp-config.json
+/mice/settings/prod.py
+.DS_Store
+.idea
+/.vscode
+prod.py

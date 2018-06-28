@@ -1,0 +1,105 @@
+app home
+    slider
+        img
+        title
+
+    top_mice_directions
+
+app mice_direction
+
+    direction_image
+        img = ImageField()
+        title = CharField()
+        direction = FK(direction)
+
+    direction
+        descript = textfield
+        title = text
+        programs = m2m(mice_program.program)
+        hotels = m2m(mice_hotel.hotel)
+        longitude = DecimalField
+        latitude = DecimalField
+
+
+app mice_program
+    program_image
+        img = ImageField()
+        title = CharField()
+        program = FK(program)
+
+    program
+        title
+        description
+        members = IntegerField()
+        duration
+        seasons
+        count = FK(count_group)
+        options
+
+app mice_hotel
+
+    hotel_image
+        img
+        hotel = FK(hotel)
+
+    hotel
+        title
+        phone
+        fax_phone ???
+        email
+        adress
+        site_url
+        video_url
+        longitude
+        latitude
+        rooms_count
+        rating
+        hotel = FK(hotel)
+        square
+        seats
+        hotel = FK(hotel)
+        categroy
+        hotel = FK(hotel)
+
+app mice_platform
+
+    platfrom_images
+        img
+        platform = FK(platform)
+
+    platform
+        title
+        adress
+        phone
+        fax_phone
+        email
+        site_url
+        direction = FK(direction_item)
+        description
+        longitude
+        latitude
+
+
+
+app about_us
+    team
+        imgs
+
+app contact
+    form
+        f_name
+        l_name
+        email
+        phone
+        mob_phone
+        adress
+        company
+        site_url
+        skype
+        start_date
+        finish_date
+        count_group
+        direction
+        hotel_ctaegory = fk(hotels_category)
+        message = textfield
+
